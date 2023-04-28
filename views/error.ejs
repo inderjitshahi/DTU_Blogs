@@ -1,0 +1,14 @@
+<%- include('includes/head.ejs') %>
+
+    </head>
+
+    <body>
+        <%- include('includes/nav.ejs',{user:undefined}) %>
+            <div class="min-h-[70vh] grid place-items-center">
+                <p class="text-3xl text-red-500 font-semibold">
+                    Error: <%= message %>
+                </p>
+            </div>
+    </body>
+
+    </html>

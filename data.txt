@@ -1,0 +1,13 @@
+1. Users Table: This table can store information about registered users of the blog website, including fields such as user ID, username, password (hashed), email address, profile picture, date of registration, and any other relevant user information.
+
+2. Posts Table: This table can store the blog posts created by users, including fields such as post ID, title, content, author ID (foreign key referencing the Users Table), date of creation, and any other relevant post information.
+
+3. Categories Table: This table can store different categories or tags that can be associated with each blog post, including fields such as category ID, category name, and any other relevant category information.
+
+4. Comments Table: This table can store comments made by users on blog posts, including fields such as comment ID, post ID (foreign key referencing the Posts Table), commenter ID (foreign key referencing the Users Table), comment content, date of comment, and any other relevant comment information.
+
+5. Likes Table: This table can store information about likes or upvotes received by blog posts, including fields such as like ID, post ID (foreign key referencing the Posts Table), user ID (foreign key referencing the Users Table), and any other relevant like information.
+
+6. Images Table: This table can store image files uploaded by users for their blog posts or user profiles, including fields such as image ID, image file (as a binary or file path), image caption, uploader ID (foreign key referencing the Users Table), date of upload, and any other relevant image information.
+
+Note: Foreign keys are used to establish relationships between tables and ensure data integrity. These are just basic suggestions for table structures in a blog website database and may vary depending on specific requirements and functionalities of the website.

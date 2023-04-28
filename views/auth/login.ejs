@@ -1,0 +1,30 @@
+<%- include('../includes/head.ejs',{user:null}) %>
+
+    </head>
+
+    <body>
+        <%- include('../includes/nav.ejs',{user:null}) %>
+            <form class="min-h-[85vh] border-2 border-red-500 grid place-items-center" method="POST" action="/login">
+                <ul class="w-full md:w-1/2 flex flex-col gap-5 px-2">
+                    <% errors.forEach((error,i)=>{ %>
+                        <p class="text-center text-red-500 font-semibold">
+                            <%=error.msg%>
+                        </p>
+                        <%})%>
+                            <li class="flex flex-col space-y-2">
+                                <label for="email">Email</label>
+                                <!-- Name attribute is must to apply -->
+                                <input type="email" name="email" id="email" class="border-2 py-2 px-3 rounded-sm">
+                            </li>
+                            <li class="flex flex-col space-y-2">
+                                <label for="password">Password</label>
+                                <input type="password" name="password" id="password"
+                                    class="border-2 py-2 px-3 rounded-sm">
+                            </li>
+                            <button type="submit"
+                                class="bg-blue-500 py-1 uppercase text-white font-semibold">Login</button>
+                </ul>
+            </form>
+    </body>
+
+    </html>

@@ -1,0 +1,42 @@
+<nav class="bg-purple-500 text-white font-semibold flex justify-between px-2 md:px-10 items-center max-h-[15vh]">
+    <div class="h-10 w-10 md:h-20 md:w-20 grid items-center">
+        <a href="/">
+            <img src="/App_logo/png/logo-no-background.png" class="">
+        </a>
+    </div>
+    <% if(user){%>
+        <div>
+            <p>Welcome back <%= user.name %> 🎉🎉</p>
+        </div>
+        <ul class="flex gap-2 md:gap-10 text-sm md:text-lg">
+            <li>
+                <a href="/posts/createPost">Write</a>
+            </li>
+            <% if(user.role==='admin' ){%>
+                <li>
+                    <a href="/users">Users</a>
+                </li>
+                <%}%>
+
+                    <li>
+                        <a href="/posts">Posts</a>
+                    </li>
+                    <li>
+                        <a href="/categories">Categories</a>
+                    </li>
+                    <li>
+                        <a href="/logout">Logout</a>
+                    </li>
+        </ul>
+
+        <%}else{%>
+            <ul class="flex gap-2 md:gap-10 text-sm md:text-lg">
+                <li>
+                    <a href="/login">Login</a>
+                </li>
+                <li>
+                    <a href="/signup">SingUp</a>
+                </li>
+            </ul>
+            <%} %>
+</nav>

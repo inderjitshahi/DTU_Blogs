@@ -1,0 +1,38 @@
+<%- include('../includes/head.ejs') %>
+
+    </head>
+
+    <body>
+        <%- include('../includes/nav.ejs',{user:user}) %>
+            <div class="grid grid-cols-2 place-items-center mt-16">
+                <% users.forEach((user,i)=>{ %>
+                    <div class="border-b-2 w-[30vw] min-h-[20vh] flex items-center justify-between">
+                        <div>
+                            <p>
+                                <%= user.name %>
+                            </p>
+                            <p>
+                                <%= user.email %>
+                            </p>
+                            <form action="users/delete/<%= user.id %>" method="post">
+                                <div class="h-10 w-10 cursor-pointer">
+                                    <button type="submit">
+                                        <img src="/delete.png">
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        <form action="users/<%=user.id%>" method="get">
+                            <div class="w-20 h-20">
+                                <button type="submit">
+                                    <img src="<%= user.role=='admin'?'/admin_user.svg':'/user.svg' %>"
+                                        class="cursor-pointer">
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <%})%>
+            </div>
+    </body>
+
+    </html>

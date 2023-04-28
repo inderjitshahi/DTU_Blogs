@@ -1,0 +1,37 @@
+<%- include('../includes/head.ejs') %>
+
+    </head>
+
+    <body>
+        <%- include('../includes/nav.ejs',{user:user}) %>
+            <form class="min-h-[85vh]  grid place-items-center" method="POST" action="/posts">
+                <ul class="w-full md:w-1/2 flex flex-col gap-5 px-2">
+                    <% errors.forEach((error,i)=>{ %>
+                        <p class="text-center text-red-500 font-semibold">
+                            <%=error.msg%>
+                        </p>
+                        <%})%>
+
+                            <li class="flex flex-col space-y-2">
+                                <label for="name">Title</label>
+                                <!-- Name attribute is must to apply -->
+                                <input type="text" name="title" id="title" class="border-2 py-2 px-3 rounded-sm">
+                            </li>
+                            <li class="flex flex-col space-y-2">
+                                <label for="description">Description</label>
+                                <!-- Name attribute is must to apply -->
+                                <input type="text" name="description" id="description"
+                                    class="border-2 py-2 px-3 rounded-sm">
+                            </li>
+                            <li class="flex flex-col space-y-2">
+                                <label for="content">Content</label>
+                                <!-- Name attribute is must to apply -->
+                                <textarea type="text" name="content" id="content"
+                                    class="border-2 py-2 px-3 rounded-sm"></textarea>
+                            </li>
+                            <button type="submit" class="bg-blue-500 py-1 uppercase text-white font-semibold">Post</button>
+                </ul>
+            </form>
+    </body>
+
+    </html>
